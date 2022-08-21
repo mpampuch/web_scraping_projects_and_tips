@@ -10,7 +10,7 @@ page_num = 1
 quotes = []
 scrape = True
 
-# Use a while loop because it allows you run all the 
+# Use a while loop instead of a for loop because it allows you to scrape without knowing how many pages you'll need to search
 while scrape == True:
     try:
 #         '''
