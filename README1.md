@@ -197,7 +197,6 @@ OUTPUTS
     domain in literature without prior coordination or asking for permission.</p>
 '''
 
-# notice dict["key"] notation
 >>> soup.select("p")[1].select("a")[0]["href"]
 '''OUTPUTS
 'This domain is for use in illustrative examples in documents. You may use this\n    domain in literature without prior coordination or asking for permission.'
