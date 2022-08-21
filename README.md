@@ -21,28 +21,25 @@ import bs4
 - e.g.
 
 ```python
-request = requests.get("https://www.example.com/")
+>>> request = requests.get("https://www.example.com/")
 ```
 
 - The HTML of the website is then stored inside the `.text` attribute of the request instance (in string form)
   - The request instance is of class `requests.models.Response`
   
 ```python
-request.text
-'''
-OUTPUTS
+>>> request.text
+'''OUTPUTS
 '<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset="utf-8" />\n    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <style type="text/css">\n    body {\n        background-color: #f0f0f2;\n        margin: 0;\n        padding: 0;\n        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;\n        \n    }\n    div {\n        width: 600px;\n        margin: 5em auto;\n        padding: 2em;\n        background-color: #fdfdff;\n        border-radius: 0.5em;\n        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);\n    }\n    a:link, a:visited {\n        color: #38488f;\n        text-decoration: none;\n    }\n    @media (max-width: 700px) {\n        div {\n            margin: 0 auto;\n            width: auto;\n        }\n    }\n    </style>    \n</head>\n\n<body>\n<div>\n    <h1>Example Domain</h1>\n    <p>This domain is for use in illustrative examples in documents. You may use this\n    domain in literature without prior coordination or asking for permission.</p>\n    <p><a href="https://www.iana.org/domains/example">More information...</a></p>\n</div>\n</body>\n</html>\n'
 '''
 
-type(request.text)
-'''
-OUTPUTS
+>>> type(request.text)
+'''OUTPUTS
 <class 'str'>
 '''
 
-type(request)
-'''
-OUTPUTS
+>>> type(request)
+'''OUTPUTS
 <class 'requests.models.Response'>
 '''
 ```
@@ -57,11 +54,10 @@ OUTPUTS
       - This is why `import lxml` is necessary at the start of the script
 
 ```python
-soup = bs4.BeautifulSoup(request.text, "lxml")
+>>> soup = bs4.BeautifulSoup(request.text, "lxml")
 
-soup
-'''
-OUTPUTS
+>>> soup
+'''OUTPUTS
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,9 +108,8 @@ OUTPUTS
 - soup objects are not stored as strings, but rather as special BeautifulSoup instances
 
 ```python
-type(soup)
-'''
-OUTPUTS
+>>> type(soup)
+'''OUTPUTS
 <class 'bs4.BeautifulSoup'>
 '''
 ```
@@ -122,22 +117,21 @@ OUTPUTS
 ## Grabbing elements and classes with BeautifulSoup
 
 - Grabbing HTML elements can be done using the `.select()` method of BeautifulSoup
-  - To grab tags, simply use `soup.select("tag")`
-    - e.g. `soup.select("div")` grabs all element with the <div> tag 
-  - To grab classes, use `soup.select(".some_class")`
-  - To grab ids, use `soup.select("#some_id")`
+ - To grab tags, simply use `soup.select("tag")`
+   - e.g. `soup.select("div")` grabs all element with the &lt;div> tag 
+ - To grab classes, use `soup.select(".some_class")`
+ - To grab ids, use `soup.select("#some_id")`
   - To grab elements within elements, use `soup.select("tag1 tag2")`
-    - e.g. `soup.select("div span")` grabs all <span> elements that are within <div> tags
+   - e.g. `soup.select("div span")` grabs all &lt;span> elements that are within &lt;div> tags
   - To grab elements directly within elements, use `soup.select("tag1 > tag2")`
-    - e.g. `soup.select("div > span")` grabs all <span> elements that are directly within <div> tags, with nothing in between
+    - e.g. `soup.select("div > span")` grabs all &lt;span> elements that are directly within &lt;div> tags, with nothing in between
       - This nomenclature is very similar to CSS selectors
 
 - e.g. grabbing paragraph elements from www.example.com
 
 ```python
-soup.select("p")
-'''
-OUTPUTS
+>>> soup.select("p")
+'''OUTPUTS
 [<p>This domain is for use in illustrative examples in documents. You may use this
     domain in literature without prior coordination or asking for permission.</p>, <p><a href="https://www.iana.org/domains/example">More information...</a></p>]
 '''
@@ -146,15 +140,13 @@ OUTPUTS
 - You can also select elements within elements with another `.select` call
 
 ```python
-soup.select("p")[1]
-'''
-OUTPUTS
+>>> soup.select("p")[1]
+'''OUTPUTS
 <p><a href="https://www.iana.org/domains/example">More information...</a></p>
 '''
 
-soup.select("p")[1].select("a")
-'''
-OUTPUTS
+>>> soup.select("p")[1].select("a")
+'''OUTPUTS
 [<a href="https://www.iana.org/domains/example">More information...</a>]
 '''
 ```
@@ -162,9 +154,8 @@ OUTPUTS
 - The type of this element is also not a string, but rather a `bs4.element.Tag` so you can do some more scraping and data extracting from it using BeautifulSoup methods
 
 ```python
-type(soup.select("p")[1].select("a")[0])
-'''
-OUTPUTS
+>>> type(soup.select("p")[1].select("a")[0])
+'''OUTPUTS
 <class 'bs4.element.Tag'>'''
 ```
 
