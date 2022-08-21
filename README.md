@@ -117,6 +117,7 @@ import bs4
 ## Grabbing elements and classes with BeautifulSoup
 
 - Grabbing HTML elements can be done using the `.select()` method of BeautifulSoup
+
  - To grab tags, simply use `soup.select("tag")`
    - e.g. `soup.select("div")` grabs all element with the &lt;div> tag 
  - To grab classes, use `soup.select(".some_class")`
@@ -125,6 +126,7 @@ import bs4
    - e.g. `soup.select("div span")` grabs all &lt;span> elements that are within &lt;div> tags
   - To grab elements directly within elements, use `soup.select("tag1 > tag2")`
     - e.g. `soup.select("div > span")` grabs all &lt;span> elements that are directly within &lt;div> tags, with nothing in between
+
       - This nomenclature is very similar to CSS selectors
 
 - e.g. grabbing paragraph elements from www.example.com
