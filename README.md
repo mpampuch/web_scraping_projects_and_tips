@@ -186,7 +186,7 @@ import bs4
 ```python
 >>> soup.select("p")[0]
 '''OUTPUTS
-<p>This domain is for use in illustrative examples in documents. You may use this
+<p> This domain is for use in illustrative examples in documents. You may use this
     domain in literature without prior coordination or asking for permission.</p>
 '''
 
@@ -196,4 +196,15 @@ import bs4
 '''
 ```
 
+# Scraping videos
+ - Organize notes about `youtube-dl`, `gallery-dl` (for twitter), `--postprocessor-args "-ss x:xx:xx.xx -t xx:xx:xx.xx"`, grabbing things from the network tab of chrome-dev tools, `nohup ... &` and the difference between `youtube-dl` and `ffmpeg`.
+ - Some forum posts that helped you before
+  - https://unix.stackexchange.com/questions/230481/how-to-download-portion-of-video-with-youtube-dl-command
+ - Some commands to remind you of what you've done before
+ ```
+ffmpeg -ss 5:59:17 -i "https://184vod-adaptive.akamaized.net/exp\=1664533949\~acl\=%2F282eb4d9-350e-40cf-9e05-37b0e2149a8f%2F%2A\~hmac\=d08b342e69f532034932d3479a0c097043d26a94934d11dfcf6126b210caccb9/282eb4d9-350e-40cf-9e05-37b0e2149a8f/sep/video/1222279f,de1af7de,b93f4bfc,42a59416,ff3118a4/audio/7ad16d49,841db898/master.mpd\?query_string_ranges\=1\&base64_init\=1" -ss 5:59:17 -i "https://184vod-adaptive.akamaized.net/exp\=1664533949\~acl\=%2F282eb4d9-350e-40cf-9e05-37b0e2149a8f%2F%2A\~hmac\=d08b342e69f532034932d3479a0c097043d26a94934d11dfcf6126b210caccb9/282eb4d9-350e-40cf-9e05-37b0e2149a8f/sep/video/1222279f,de1af7de,b93f4bfc,42a59416,ff3118a4/audio/7ad16d49,841db898/master.mpd\?query_string_ranges\=1\&base64_init\=1" -t 7:05 -map 0:v -map 1:a -c:v libx264 -c:a aac ~/Dropbox/UWO/grad_school/ben_scott_foundry_presentation.mkv\n
 
+nohup youtube-dl https://vimeo.com/715755275 --video-password 5YN8IO-2022  --postprocessor-args "-ss 5:59:17.00 -t 00:07:05.00" -o ~/Dropbox/UWO/grad_school/ben_scott_foundry_presentation.mp4 &
+
+gallery-dl https://twitter.com/Iamthetimby/status/1555702108833423364 -o "test"
+ ```
