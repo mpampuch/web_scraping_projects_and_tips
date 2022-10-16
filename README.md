@@ -200,7 +200,7 @@ import bs4
  - Organize notes about `youtube-dl`, `gallery-dl` (for twitter), `--postprocessor-args "-ss x:xx:xx.xx -t xx:xx:xx.xx"`, grabbing things from the network tab of chrome-dev tools, `nohup ... &` and the difference between `youtube-dl` and `ffmpeg`.
  - Some forum posts that helped you before
     - https://unix.stackexchange.com/questions/230481/how-to-download-portion-of-video-with-youtube-dl-command
- - Helpful website to work with postprocessor-args
+ - Helpful website to work with `postprocessor-args`
     - https://www.calculator.net/time-calculator.html?tcday1=&tchour1=4&tcminute1=53&tcsecond1=55&Op=-&tcday2=&tchour2=4&tcminute2=22&tcsecond2=7&tcday3=&tchour3=&tcminute3=&tcsecond3=&ctype=1&x=98&y=12
  - Some commands to remind you of what you've done before
  ```
