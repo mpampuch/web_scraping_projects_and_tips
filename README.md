@@ -201,6 +201,7 @@ import bs4
  - Some forum posts that helped you before
     - https://unix.stackexchange.com/questions/230481/how-to-download-portion-of-video-with-youtube-dl-command
     - How to trim videos: https://shotstack.io/learn/use-ffmpeg-to-trim-video/
+    - How to grab full playlists and number them: https://askubuntu.com/questions/694848/how-to-download-a-youtube-playlist-with-numbered-prefix-via-youtube-dl
  - Helpful website to work with `postprocessor-args`
     - https://www.calculator.net/time-calculator.html?tcday1=&tchour1=4&tcminute1=53&tcsecond1=55&Op=-&tcday2=&tchour2=4&tcminute2=22&tcsecond2=7&tcday3=&tchour3=&tcminute3=&tcsecond3=&ctype=1&x=98&y=12
     - i.e. 
@@ -217,4 +218,5 @@ nohup youtube-dl https://vimeo.com/715755275 --video-password 5YN8IO-2022  --pos
 gallery-dl https://twitter.com/Iamthetimby/status/1555702108833423364 -o "test"
 
 nohup youtube-dl -o chamber_media_ad_research https://www.facebook.com/RussellBrunsonLIVE/videos/511628290475707 --add-header "cookie: datr=LphrYBGMEwqPLovPkyV7h_nd; sb=iqBrYGIo3o-VCNH_zlq6Jts5; c_user=100013504470708; m_page_voice=100013504470708; m_pixel_ratio=2; dpr=2; xs=16%3AgClNpzs0H_sjyw%3A2%3A1637379051%3A-1%3A14923%3A%3AAcXb6-81kmqLdYQYVvHpWPuXZf1HJY_w2XI9pJyDIz-Y; fr=0ODlb7aGYdu2HameH.AWX-gM3DpK5h_TfIkbNjMPOWRaQ.BjS1xZ.Cg.AAA.0.0.BjS1xZ.AWV6NCe6rgY; presence=C%7B%22t3%22%3A%5B%7B%22i%22%3A%22u.100010631477740%22%7D%2C%7B%22i%22%3A%22g.5664680843541958%22%7D%2C%7B%22i%22%3A%22g.5482284065183654%22%7D%5D%2C%22utc3%22%3A1665883241375%2C%22v%22%3A1%7D; wd=1440x393" --postprocessor-args "-ss 4:22:52.00 -t 00:31:48.00" &
+nohup youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" -i PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu &
  ```
