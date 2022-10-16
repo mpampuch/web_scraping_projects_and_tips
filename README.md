@@ -199,9 +199,9 @@ import bs4
 # Scraping videos
  - Organize notes about `youtube-dl`, `gallery-dl` (for twitter), `--postprocessor-args "-ss x:xx:xx.xx -t xx:xx:xx.xx"`, grabbing things from the network tab of chrome-dev tools, `nohup ... &` and the difference between `youtube-dl` and `ffmpeg`.
  - Some forum posts that helped you before
-  - https://unix.stackexchange.com/questions/230481/how-to-download-portion-of-video-with-youtube-dl-command
+    - https://unix.stackexchange.com/questions/230481/how-to-download-portion-of-video-with-youtube-dl-command
  - Helpful website to work with postprocessor-args
-  - https://www.calculator.net/time-calculator.html?tcday1=&tchour1=4&tcminute1=53&tcsecond1=55&Op=-&tcday2=&tchour2=4&tcminute2=22&tcsecond2=7&tcday3=&tchour3=&tcminute3=&tcsecond3=&ctype=1&x=98&y=12
+    - https://www.calculator.net/time-calculator.html?tcday1=&tchour1=4&tcminute1=53&tcsecond1=55&Op=-&tcday2=&tchour2=4&tcminute2=22&tcsecond2=7&tcday3=&tchour3=&tcminute3=&tcsecond3=&ctype=1&x=98&y=12
  - Some commands to remind you of what you've done before
  ```
 ffmpeg -ss 5:59:17 -i "https://184vod-adaptive.akamaized.net/exp\=1664533949\~acl\=%2F282eb4d9-350e-40cf-9e05-37b0e2149a8f%2F%2A\~hmac\=d08b342e69f532034932d3479a0c097043d26a94934d11dfcf6126b210caccb9/282eb4d9-350e-40cf-9e05-37b0e2149a8f/sep/video/1222279f,de1af7de,b93f4bfc,42a59416,ff3118a4/audio/7ad16d49,841db898/master.mpd\?query_string_ranges\=1\&base64_init\=1" -ss 5:59:17 -i "https://184vod-adaptive.akamaized.net/exp\=1664533949\~acl\=%2F282eb4d9-350e-40cf-9e05-37b0e2149a8f%2F%2A\~hmac\=d08b342e69f532034932d3479a0c097043d26a94934d11dfcf6126b210caccb9/282eb4d9-350e-40cf-9e05-37b0e2149a8f/sep/video/1222279f,de1af7de,b93f4bfc,42a59416,ff3118a4/audio/7ad16d49,841db898/master.mpd\?query_string_ranges\=1\&base64_init\=1" -t 7:05 -map 0:v -map 1:a -c:v libx264 -c:a aac ~/Dropbox/UWO/grad_school/ben_scott_foundry_presentation.mkv\n
